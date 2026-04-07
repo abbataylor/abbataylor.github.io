@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Page Not Found | AbbaSoft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <style>
+    .not-found {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: radial-gradient(ellipse at center, rgba(0,191,255,0.06) 0%, transparent 60%);
+    }
+    .not-found .code {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(0,191,255,0.3);
+      line-height: 1;
+      margin-bottom: 0;
+    }
+    .not-found h2 { font-size: 1.6rem; color: #fff; margin: 0.5rem 0 1rem; }
+    .not-found p { color: var(--muted, #9aa4b2); max-width: 380px; margin-bottom: 2rem; }
+    .not-found-links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  </style>
+</head>
+<body class="dark">
+  <div class="not-found">
+    <div class="code">404</div>
+    <h2>Page Not <span class="neon">Found</span></h2>
+    <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+    <div class="not-found-links">
+      <a href="index.html" class="btn btn-primary"><i class='bx bx-home'></i> Go Home</a>
+      <a href="projects.html" class="btn btn-outline"><i class='bx bx-code-block'></i> View Projects</a>
+      <a href="contact.html" class="btn btn-outline"><i class='bx bx-envelope'></i> Contact Me</a>
+    </div>
+  </div>
+</body>
+</html>

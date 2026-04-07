@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AbbaSoft | Abba Moses — Full-Stack Developer</title>
+  <meta name="description" content="Abba Moses — Full-Stack Web Developer & IT Solutions Specialist based in Kampala, Uganda. Building modern, responsive, and high-performing web applications." />
+  <meta property="og:title" content="AbbaSoft | Abba Moses — Full-Stack Developer" />
+  <meta property="og:description" content="Full-Stack Developer, UI/UX Designer & IT Solutions Specialist based in Kampala, Uganda." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AbbaSoft | Abba Moses" />
+  <meta name="twitter:description" content="Full-Stack Developer & IT Solutions Specialist." />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abba Moses",
+    "jobTitle": "Full-Stack Developer",
+    "description": "Full-Stack Web Developer and IT Solutions Specialist based in Kampala, Uganda.",
+    "url": "https://abbataylor.github.io",
+    "email": "mosesmbularinaabba@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kampala",
+      "addressCountry": "UG"
+    },
+    "sameAs": [
+      "https://github.com/abbataylor",
+      "https://linkedin.com/in/abba-moses-869b04229"
+    ],
+    "knowsAbout": ["PHP", "Laravel", "JavaScript", "React", "MySQL", "UI/UX Design", "Web Development"]
+  }
+  </script>
+</head>
+<body class="dark">
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="loader">
+      <div class="logo-glow">AS</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><span class="brand-prefix">Welcome to </span><span class="brand-accent">AbbaSoft</span></div>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn-ghost" title="Toggle theme" aria-label="Toggle theme"><i class='bx bx-moon' id="themeIcon"></i></button>
+        <button id="menuToggle" class="btn-ghost mobile-only" aria-label="Open menu"><i class='bx bx-menu'></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div id="heroBg" class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-content" data-aos="fade-right">
+        <div id="available-badge"></div>
+        <p class="eyebrow">Hello, World 👋</p>
+        <h1 class="hero-title">I'm <span class="neon">Abba Moses</span></h1>
+        <p class="typing">— <span id="typing"></span></p>
+        <p class="hero-sub">Full-Stack Web Developer &amp; IT Solutions Specialist based in Kampala, Uganda. I build modern, responsive, and high-performing web applications.</p>
+        <div class="hero-cta">
+          <a href="projects.html" class="btn btn-primary"><i class='bx bx-code-block'></i> View Projects</a>
+          <a href="assets/cv.pdf" class="btn btn-outline" download><i class='bx bx-download'></i> Download CV</a>
+        </div>
+        <div class="socials">
+          <a href="#" data-social="github" target="_blank" rel="noopener" title="GitHub"><i class='bx bxl-github'></i></a>
+          <a href="#" data-social="linkedin" target="_blank" rel="noopener" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+          <a href="mailto:mosesmbularinaabba@gmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <div class="card-3d">
+          <img src="assets/images/profile.jpg" class="profile" alt="Abba Moses" loading="lazy">
+          <div class="card-info">
+            <p class="project-name">Abba Moses</p>
+            <p class="project-desc">Full-Stack Developer · Kampala, Uganda</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About snapshot -->
+  <section class="about" id="about-snap">
+    <div class="container about-inner">
+      <div data-aos="fade-right">
+        <h2>Building <span class="neon">Digital Solutions</span> That Matter</h2>
+        <p style="color:var(--muted);margin:1rem 0 1.5rem">I specialize in PHP (Laravel), MySQL, JavaScript, HTML, CSS and React. As the founder of AbbaSoft, my goal is to deliver smart, scalable, user-focused IT solutions — from business automation tools to creative, brand-driven websites.</p>
+        <ul class="skills">
+          <li>⚙️ Full-Stack Web Development (PHP, Laravel, JS, React)</li>
+          <li>🎨 UI/UX Design &amp; Branding</li>
+          <li>🔗 API Integrations</li>
+          <li>💾 Database Design &amp; Management</li>
+          <li>🚀 Deployment &amp; Performance Optimization</li>
+        </ul>
+        <a href="about.html" class="btn btn-primary" style="margin-top:1.5rem;display:inline-flex"><i class='bx bx-user'></i> Learn More About Me</a>
+      </div>
+      <div class="card-stats" data-aos="fade-left" data-stats-container></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="projects" id="services">
+    <div class="container">
+      <div class="section-head" data-aos="fade-down">
+        <h2>My <span class="neon">Services</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project" data-aos="fade-up" style="padding:1.8rem;text-align:center">
+          <i class='bx bx-code-alt' style="font-size:2.5rem;color:var(--neon);margin-bottom:1rem;display:block"></i>
+          <h3 style="color:#fff;margin-bottom:0.6rem">Web Development</h3>
+          <p style="color:var(--muted)">Responsive, fast, and user-friendly websites tailored to your business goals.</p>
+        </div>
+        <div class="project" data-aos="fade-up" data-aos-delay="100" style="padding:1.8rem;text-align:center">
+          <i class='bx bx-paint' style="font-size:2.5rem;color:var(--neon);margin-bottom:1rem;display:block"></i>
+          <h3 style="color:#fff;margin-bottom:0.6rem">UI/UX Design</h3>
+          <p style="color:var(--muted)">Modern, clean interfaces that provide an exceptional user experience.</p>
+        </div>
+        <div class="project" data-aos="fade-up" data-aos-delay="200" style="padding:1.8rem;text-align:center">
+          <i class='bx bx-data' style="font-size:2.5rem;color:var(--neon);margin-bottom:1rem;display:block"></i>
+          <h3 style="color:#fff;margin-bottom:0.6rem">Database &amp; Backend</h3>
+          <p style="color:var(--muted)">Scalable database design and robust backend systems with PHP and MySQL.</p>
+        </div>
+        <div class="project" data-aos="fade-up" data-aos-delay="300" style="padding:1.8rem;text-align:center">
+          <i class='bx bx-mobile-alt' style="font-size:2.5rem;color:var(--neon);margin-bottom:1rem;display:block"></i>
+          <h3 style="color:#fff;margin-bottom:0.6rem">Mobile Optimization</h3>
+          <p style="color:var(--muted)">Ensuring your website looks great and functions perfectly on every device.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <h2 data-aos="fade-down">How I <span class="neon">Work</span></h2>
+      <div class="process-grid" id="process-container"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <h2 data-aos="fade-down">What Clients <span class="neon">Say</span></h2>
+      <div class="testi-grid" id="testimonials-container"></div>
+    </div>
+  </section>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top" title="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> AbbaSoft Technologies. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#" data-social="github" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" data-social="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:mosesmbularinaabba@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="assets/vendor/aos.js"></script>
+  <script src="assets/vendor/typed.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/portfolio-init.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

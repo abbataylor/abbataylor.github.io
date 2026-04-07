@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | AbbaSoft — Abba Moses</title>
+  <meta name="description" content="Get in touch with Abba Moses — Full-Stack Developer available for freelance work and collaborations. Based in Kampala, Uganda." />
+  <meta property="og:title" content="Contact Abba Moses | AbbaSoft" />
+  <meta property="og:description" content="Open to freelance work and collaborations. Send a message and I'll reply shortly." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | AbbaSoft" />
+  <meta name="twitter:description" content="Get in touch with Abba Moses — Full-Stack Developer." />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body class="dark">
+  <!-- Page Loader -->
+  <div id="preloader" class="preloader">
+    <div class="loader">
+      <div class="logo-glow">AS</div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><span class="brand-prefix">Welcome to </span><span class="brand-accent">AbbaSoft</span></div>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn-ghost" title="Toggle theme" aria-label="Toggle theme"><i class='bx bx-moon' id="themeIcon"></i></button>
+        <button id="menuToggle" class="btn-ghost mobile-only" aria-label="Open menu"><i class='bx bx-menu'></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Custom cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+ 
+ <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <h2>Contact <span class="neon">AbbaSoft</span></h2>
+        <p class="contact-sub">Open to freelance work and collaborations. Send a message and I’ll reply shortly.</p>
+
+        <div class="contact-grid">
+          <form id="contactForm" class="contact-form">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-note"></p>
+          </form>
+
+          <aside class="contact-aside">
+            <div class="contact-card">
+              <h4>Get in touch</h4>
+              <p>Email: <a href="mailto:mosesmbularinaabba@gmail.com">mosesmbularinaabba@gmail.com</a></p>
+              <p>Location: Kampala, Uganda</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top" title="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> AbbaSoft Technologies. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#" data-social="github" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" data-social="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:mosesmbularinaabba@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- CDN (recommended) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="assets/vendor/aos.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/portfolio-init.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

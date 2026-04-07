@@ -1,0 +1,16 @@
+# Old project folders — not part of the main portfolio
+my-portfolio/
+my-portfolio-1/
+portfolio-website/
+/css
+
+# Claude Code settings
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.log

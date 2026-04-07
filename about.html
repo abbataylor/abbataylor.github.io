@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | AbbaSoft — Abba Moses</title>
+  <meta name="description" content="Learn about Abba Moses — Full-Stack Developer & IT Solutions Specialist based in Kampala, Uganda. BSc Software Engineering student at KIU." />
+  <meta property="og:title" content="About Abba Moses | AbbaSoft" />
+  <meta property="og:description" content="Full-Stack Developer, UI/UX Designer & IT Solutions Specialist based in Kampala, Uganda." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Abba Moses | AbbaSoft" />
+  <meta name="twitter:description" content="Full-Stack Developer & IT Solutions Specialist." />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body class="dark">
+     <div id="preloader" class="preloader">
+    <div class="loader">
+      <div class="logo-glow">AS</div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><span class="brand-prefix">Welcome to </span><span class="brand-accent">AbbaSoft</span></div>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn-ghost" title="Toggle theme" aria-label="Toggle theme"><i class='bx bx-moon' id="themeIcon"></i></button>
+        <button id="menuToggle" class="btn-ghost mobile-only" aria-label="Open menu"><i class='bx bx-menu'></i></button>
+      </div>
+    </div>
+  </header>
+
+    
+
+ 
+ <section id="about" class="about-section">
+  <div class="container">
+    <div class="about-content">
+
+      <!-- Profile Photo -->
+      <div style="text-align:center;margin-bottom:2rem" data-aos="fade-down">
+        <img src="assets/images/profile.jpg" alt="Abba Moses" loading="lazy"
+          style="width:160px;height:160px;object-fit:cover;border-radius:50%;border:4px solid var(--neon);box-shadow:0 0 30px rgba(0,191,255,0.18)">
+      </div>
+
+      <h2 class="section-title">About Me</h2>
+      <p class="intro-text">
+        Hi, I’m <span class="highlight">Abba Moses</span> — a passionate 
+        <span class="highlight">Full-Stack Web Developer</span> and 
+        <span class="highlight">IT Solutions Specialist</span> based in Kampala, Uganda.
+        I’m currently pursuing a <span class="highlight">Bachelor’s degree in Software Engineering</span>,
+        following my Diploma in Information Technology.
+      </p>
+
+      <p>
+        I specialize in building <strong>modern, responsive, and high-performing websites</strong>
+        and web applications using <strong>PHP (Laravel), MySQL, JavaScript, HTML, and CSS</strong>.
+        My experience includes developing professional systems such as a 
+        <strong>Cargo Shipping Platform</strong>, an <strong>IT Support Chatbot</strong>,
+        and a <strong>Student Clearance System</strong>.
+      </p>
+
+      <p>
+        As the founder of <span class="highlight">AbbaSoft</span>, my goal is to deliver
+        <strong>smart, scalable, and user-focused IT solutions</strong> — from business automation
+        tools to creative, brand-driven websites — all built with precision and clean code.
+      </p>
+
+      <div class="focus-box">
+        <h3>💡 What Drives Me</h3>
+        <p>
+          I believe technology should make life simpler, empower people, and help businesses grow.
+          My mission is to design solutions that do exactly that — beautifully and intelligently.
+        </p>
+      </div>
+
+      <!-- CV Download -->
+      <div style="text-align:center;margin-top:2.5rem" data-aos="fade-up">
+        <a href="assets/cv.pdf" download class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none">
+          <i class='bx bx-download'></i> Download My CV
+        </a>
+        <a href="contact.html" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:8px;margin-left:12px;text-decoration:none">
+          <i class='bx bx-envelope'></i> Get In Touch
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skill Bars -->
+<section class="skills-bars-section" id="skills">
+  <div class="container">
+    <h2 data-aos="fade-down">My <span class="neon">Skills</span></h2>
+    <div id="skills-bars-container"></div>
+  </div>
+</section>
+
+<!-- Journey / Timeline -->
+<section class="journey-section" id="journey">
+  <div class="container">
+    <h2 data-aos="fade-down">My <span class="neon">Journey</span></h2>
+    <div class="timeline-wrap" id="timeline-container"></div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section class="certs-section" id="certifications">
+  <div class="container">
+    <h2 data-aos="fade-down">Certifications &amp; <span class="neon">Awards</span></h2>
+    <div class="certs-grid" id="certs-container"></div>
+  </div>
+</section>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top" title="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> AbbaSoft Technologies. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#" data-social="github" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" data-social="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:mosesmbularinaabba@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- CDN (recommended) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/vendor/aos.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/portfolio-init.js"></script>
+  <script src="assets/js/main.js"></script>
+</body> 
+</html>
