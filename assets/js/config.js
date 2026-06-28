@@ -173,6 +173,10 @@ const PORTFOLIO = {
         "Multi-role user authentication (buyers, agents, admin)",
         "Fully responsive design"
       ],
+      screenshots: [
+        // "assets/images/projects/caliza/screenshot1.jpg",
+        // "assets/images/projects/caliza/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: true,
       github: null,
@@ -200,6 +204,10 @@ const PORTFOLIO = {
         "Admin analytics dashboard",
         "Role-based access control"
       ],
+      screenshots: [
+        // "assets/images/projects/careers-portal/screenshot1.jpg",
+        // "assets/images/projects/careers-portal/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: true,
       github: null,
@@ -226,6 +234,10 @@ const PORTFOLIO = {
         "User authentication and profiles",
         "Content management for administrators",
         "Featured and trending content sections"
+      ],
+      screenshots: [
+        // "assets/images/projects/jetflix/screenshot1.jpg",
+        // "assets/images/projects/jetflix/screenshot2.jpg"
       ],
       status: "Completed",
       isPrivate: true,
@@ -257,6 +269,9 @@ const PORTFOLIO = {
         "Full project case study system",
         "SEO with JSON-LD structured data"
       ],
+      screenshots: [
+        // "assets/images/projects/portfolio/screenshot1.jpg"
+      ],
       status: "Live",
       isPrivate: false,
       github: "https://github.com/abbataylor/abbataylor.github.io",
@@ -283,10 +298,14 @@ const PORTFOLIO = {
         "Dynamic geographical data rendering",
         "Modern frontend architecture"
       ],
+      screenshots: [
+        // "assets/images/projects/geo-website/screenshot1.jpg",
+        // "assets/images/projects/geo-website/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: true,
       github: null,
-      liveDemo: null,
+      liveDemo: "demo/geo-website/",
       overview: "Geo Website is a location-based web application that delivers geographical data and interactive experiences through a clean, TypeScript-powered frontend.",
       problem: "Location-based data was difficult to display and interact with in an engaging way without specialist mapping tools or overly complex libraries.",
       solution: "Built a lightweight TypeScript application that renders geographical information interactively, with strong type safety throughout the codebase for long-term maintainability.",
@@ -310,10 +329,14 @@ const PORTFOLIO = {
         "Fully responsive across all devices",
         "Performance-optimised"
       ],
+      screenshots: [
+        // "assets/images/projects/gold-dealers/screenshot1.jpg",
+        // "assets/images/projects/gold-dealers/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: true,
       github: null,
-      liveDemo: null,
+      liveDemo: "demo/gold-dealers/",
       overview: "A high-end business website built for a gold dealership, designed to communicate professionalism, trust, and quality to high-value clients through careful visual design and branding.",
       problem: "The dealership had no digital presence, relying entirely on word-of-mouth. They needed a website that matched the premium nature of their business and gave potential clients confidence to make inquiries.",
       solution: "Designed a luxury-branded website with rich visual elements, a polished product showcase, and a professional inquiry form — all targeting the trust signals high-value clients look for.",
@@ -336,6 +359,10 @@ const PORTFOLIO = {
         "Print-ready report card output",
         "Teacher and admin role management",
         "Student and class management"
+      ],
+      screenshots: [
+        // "assets/images/projects/school-report/screenshot1.jpg",
+        // "assets/images/projects/school-report/screenshot2.jpg"
       ],
       status: "Completed",
       isPrivate: true,
@@ -364,6 +391,10 @@ const PORTFOLIO = {
         "Confidential student data handling",
         "Administrative insight reports"
       ],
+      screenshots: [
+        // "assets/images/projects/student-mental-health/screenshot1.jpg",
+        // "assets/images/projects/student-mental-health/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: false,
       github: "https://github.com/abbataylor/Student-Mental-Health-System",
@@ -390,6 +421,10 @@ const PORTFOLIO = {
         "Client and driver management",
         "Invoice generation",
         "Status notification system"
+      ],
+      screenshots: [
+        // "assets/images/projects/cargo-shipping/screenshot1.jpg",
+        // "assets/images/projects/cargo-shipping/screenshot2.jpg"
       ],
       status: "Completed",
       isPrivate: true,
@@ -418,6 +453,10 @@ const PORTFOLIO = {
         "Admin dashboard for query management",
         "Session-based user tracking"
       ],
+      screenshots: [
+        // "assets/images/projects/it-chatbot/screenshot1.jpg",
+        // "assets/images/projects/it-chatbot/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: true,
       github: null,
@@ -445,6 +484,10 @@ const PORTFOLIO = {
         "Automated completion notifications",
         "Admin reporting and export tools"
       ],
+      screenshots: [
+        // "assets/images/projects/student-clearance/screenshot1.jpg",
+        // "assets/images/projects/student-clearance/screenshot2.jpg"
+      ],
       status: "Completed",
       isPrivate: true,
       github: null,
@@ -471,10 +514,13 @@ const PORTFOLIO = {
         "Drift-free timing logic",
         "Responsive design"
       ],
+      screenshots: [
+        // "assets/images/projects/countdown-timer/screenshot1.jpg"
+      ],
       status: "Live",
       isPrivate: false,
       github: "https://github.com/abbataylor/countdown-timer",
-      liveDemo: null,
+      liveDemo: "demo/countdown-timer/",
       overview: "A polished countdown timer demonstrating precise frontend development — clean code, smooth animations, and robust timer logic with no framework dependencies.",
       problem: "A practical project to demonstrate mastery of JavaScript timing functions, DOM manipulation, and CSS animation in a self-contained, testable component.",
       solution: "Built a fully featured timer using vanilla JavaScript, with clear state management for running/paused/stopped states and CSS animations for visual feedback on each state transition.",
@@ -498,10 +544,13 @@ const PORTFOLIO = {
         "Clean responsive UI",
         "Decimal precision handling"
       ],
+      screenshots: [
+        // "assets/images/projects/js-calculator/screenshot1.jpg"
+      ],
       status: "Live",
       isPrivate: false,
       github: "https://github.com/abbataylor/JS-Calc",
-      liveDemo: null,
+      liveDemo: "demo/js-calculator/",
       overview: "A vanilla JavaScript calculator demonstrating clean programming logic, event handling, and well-designed UI — no frameworks, no dependencies, just precise code.",
       problem: "A practical project to demonstrate core JavaScript skills: handling complex state (current operand, operator, result), edge cases (operator chaining, decimal input), and keyboard events correctly.",
       solution: "Built a stateful calculator with clean logic separation: display management, input handling, calculation engine, and keyboard event mapping each handled as independent concerns.",

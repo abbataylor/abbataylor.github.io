@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Demos | AbbaSoft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#e6eef8;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+    .back{position:fixed;top:20px;left:20px;display:flex;align-items:center;gap:6px;color:#9aa4b2;text-decoration:none;font-size:.88rem;transition:color .2s}
+    .back:hover{color:#00bfff}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:2rem;margin-bottom:.5rem;text-align:center}
+    .neon{color:#00bfff}
+    p{color:#9aa4b2;text-align:center;max-width:480px;margin:.5rem auto 2.5rem;line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;width:100%;max-width:800px}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.6rem;text-decoration:none;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;align-items:flex-start;gap:.5rem}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,191,255,.08);border-color:rgba(0,191,255,.2)}
+    .card i{font-size:2rem;color:#00bfff}
+    .card strong{color:#fff;font-size:.95rem}
+    .card span{color:#9aa4b2;font-size:.82rem}
+    .placeholder-pill{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;background:rgba(250,204,21,.1);color:#facc15;border:1px solid rgba(250,204,21,.2)}
+    .live-pill{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;background:rgba(0,230,118,.1);color:#00e676;border:1px solid rgba(0,230,118,.2)}
+  </style>
+</head>
+<body>
+  <a href="../index.html" class="back"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+
+  <h1>Live <span class="neon">Demos</span></h1>
+  <p>Frontend and static projects you can interact with directly. Click a card to open the demo.</p>
+
+  <div class="grid">
+    <a href="countdown-timer/" class="card">
+      <i class='bx bx-time-five'></i>
+      <strong>Countdown Timer</strong>
+      <span>HTML · CSS · JavaScript</span>
+      <span class="placeholder-pill" id="pill-ct">Awaiting files</span>
+    </a>
+    <a href="js-calculator/" class="card">
+      <i class='bx bx-calculator'></i>
+      <strong>JS Calculator</strong>
+      <span>HTML · CSS · JavaScript</span>
+      <span class="placeholder-pill" id="pill-jc">Awaiting files</span>
+    </a>
+    <a href="geo-website/" class="card">
+      <i class='bx bx-map-alt'></i>
+      <strong>Geo Website</strong>
+      <span>TypeScript · HTML · CSS</span>
+      <span class="placeholder-pill" id="pill-geo">Awaiting files</span>
+    </a>
+    <a href="gold-dealers/" class="card">
+      <i class='bx bx-diamond'></i>
+      <strong>Gold Dealers Website</strong>
+      <span>TypeScript · HTML · CSS</span>
+      <span class="placeholder-pill" id="pill-gd">Awaiting files</span>
+    </a>
+  </div>
+</body>
+</html>

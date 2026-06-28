@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Hosting Guide | AbbaSoft</title>
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#e6eef8;line-height:1.7}
+    .toolbar{background:#111;border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;position:sticky;top:0;z-index:50}
+    .toolbar-inner{max-width:900px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+    .toolbar-inner span{color:#9aa4b2;font-size:.88rem}
+    .btn-back{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:10px;font-size:.88rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.08);color:#e6eef8;transition:background .2s}
+    .btn-back:hover{background:rgba(255,255,255,.04)}
+    .doc{max-width:900px;margin:0 auto;padding:3rem 2rem 6rem}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;color:#fff;margin-bottom:.5rem}
+    .neon{color:#00bfff}
+    .lead{color:#9aa4b2;font-size:1rem;max-width:620px;margin-bottom:3rem;line-height:1.75}
+    /* toc */
+    .toc{background:rgba(0,191,255,.04);border:1px solid rgba(0,191,255,.12);border-radius:14px;padding:1.5rem 2rem;margin-bottom:3rem}
+    .toc h3{color:#fff;font-size:.9rem;margin-bottom:.8rem}
+    .toc a{display:block;color:#9aa4b2;text-decoration:none;font-size:.88rem;padding:3px 0;transition:color .2s}
+    .toc a:hover{color:#00bfff}
+    /* sections */
+    .guide-section{margin-bottom:3.5rem}
+    .guide-section h2{font-size:1.4rem;color:#fff;margin-bottom:1.2rem;display:flex;align-items:center;gap:10px;padding-bottom:.6rem;border-bottom:1px solid rgba(255,255,255,.05)}
+    .guide-section h2 i{color:#00bfff;font-size:1.4rem}
+    .guide-section h3{font-size:1rem;color:#fff;margin:1.5rem 0 .6rem}
+    .guide-section p{color:#9aa4b2;font-size:.92rem;margin-bottom:.8rem}
+    /* steps */
+    .steps{display:flex;flex-direction:column;gap:.8rem;margin:1rem 0}
+    .step{display:flex;gap:14px;align-items:flex-start}
+    .step-num{background:rgba(0,191,255,.15);color:#00bfff;font-weight:700;font-size:.8rem;min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .step p{margin:0;color:#c0cbda;font-size:.9rem}
+    code{background:rgba(255,255,255,.07);padding:2px 7px;border-radius:5px;font-size:.84rem;color:#00bfff;font-family:monospace}
+    pre{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:1.2rem 1.4rem;margin:1rem 0;overflow-x:auto}
+    pre code{background:none;padding:0;color:#e6eef8;font-size:.85rem;line-height:1.7}
+    /* cards */
+    .host-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.2rem 0}
+    .host-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.4rem}
+    .host-card h4{color:#fff;font-size:.95rem;margin-bottom:.4rem}
+    .host-card .host-url{color:#00bfff;font-size:.8rem;text-decoration:none;display:block;margin-bottom:.5rem}
+    .host-card p{color:#9aa4b2;font-size:.84rem;margin:0}
+    .host-card .pros{margin-top:.6rem;font-size:.8rem;color:#00e676}
+    /* note */
+    .note{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.15);border-radius:10px;padding:1rem 1.2rem;margin:.8rem 0;font-size:.88rem;color:#c0cbda}
+    .note strong{color:#facc15}
+    .note-blue{background:rgba(0,191,255,.05);border-color:rgba(0,191,255,.15)}
+    .note-blue strong{color:#00bfff}
+    /* project list */
+    .project-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1rem 0}
+    .type-box{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1.2rem}
+    .type-box h4{color:#fff;font-size:.9rem;margin-bottom:.6rem;display:flex;align-items:center;gap:6px}
+    .type-box h4 i{color:#00bfff}
+    .type-box ul{list-style:none;padding:0}
+    .type-box li{color:#9aa4b2;font-size:.84rem;padding:3px 0;padding-left:1rem;position:relative}
+    .type-box li::before{content:"→";position:absolute;left:0;color:#00bfff;font-size:.75rem}
+    @media(max-width:600px){.project-type-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <span><i class='bx bx-book-open'></i>&nbsp; Project Hosting Guide</span>
+    <a href="index.html" class="btn-back"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+  </div>
+</div>
+
+<div class="doc">
+
+  <h1>How to Add Your <span class="neon">Live Projects</span></h1>
+  <p class="lead">This guide explains exactly how to make each of your projects accessible to recruiters and your lecturer — whether they're static websites or PHP/Laravel applications.</p>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>📋 Contents</h3>
+    <a href="#understand">1. Understanding the two types of projects</a>
+    <a href="#screenshots">2. Adding screenshots to any project</a>
+    <a href="#static-demo">3. Activating live demos for static projects</a>
+    <a href="#php-hosting">4. Hosting your PHP/Laravel projects for free</a>
+    <a href="#update-config">5. Updating your portfolio after deployment</a>
+    <a href="#push">6. Pushing changes to GitHub</a>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="guide-section" id="understand">
+    <h2><i class='bx bx-info-circle'></i> 1. Understanding the two types of projects</h2>
+    <p>Your projects fall into two categories. Each needs a different approach to go live:</p>
+
+    <div class="project-type-grid">
+      <div class="type-box">
+        <h4><i class='bx bx-code-alt'></i> Static Projects <span style="color:#00e676;font-size:.75rem;margin-left:4px">→ Easy</span></h4>
+        <p style="color:#9aa4b2;font-size:.84rem;margin-bottom:.6rem">Pure HTML/CSS/JavaScript — no server needed. Can go directly on GitHub Pages.</p>
+        <ul>
+          <li>Countdown Timer</li>
+          <li>JS Calculator</li>
+          <li>Geo Website (TypeScript)</li>
+          <li>Gold Dealers Website (TypeScript)</li>
+          <li>Portfolio (already live)</li>
+        </ul>
+      </div>
+      <div class="type-box">
+        <h4><i class='bx bx-server'></i> PHP/Backend Projects <span style="color:#facc15;font-size:.75rem;margin-left:4px">→ Needs hosting</span></h4>
+        <p style="color:#9aa4b2;font-size:.84rem;margin-bottom:.6rem">Require a PHP server and MySQL database. Can't run on GitHub Pages.</p>
+        <ul>
+          <li>CALIZA (Real Estate)</li>
+          <li>Careers Portal</li>
+          <li>Jetflix</li>
+          <li>School Report Generator</li>
+          <li>Student Mental Health System</li>
+          <li>Cargo Shipping Platform</li>
+          <li>IT Support Chatbot</li>
+          <li>Student Clearance System</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="guide-section" id="screenshots">
+    <h2><i class='bx bx-images'></i> 2. Adding screenshots to any project</h2>
+    <p>Screenshots are the quickest way to show a project — add them to any project regardless of whether it has a live demo. They appear in a gallery on the case study page.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Take screenshots of your running project. Use <strong>Windows Snipping Tool</strong> (Win + Shift + S) or press <strong>PrintScreen</strong>.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Save them as <code>.jpg</code> files. Name them clearly: <code>screenshot1.jpg</code>, <code>screenshot2.jpg</code>, etc.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Place them in the correct project folder inside:<br><code>assets/images/projects/[project-id]/</code><br>For example: <code>assets/images/projects/caliza/screenshot1.jpg</code></p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Open <code>assets/js/config.js</code> and find your project. Update the <code>screenshots</code> array — remove the <code>//</code> comment marks and fill in the paths:</p>
+      </div>
+    </div>
+
+    <pre><code>// BEFORE (commented out):
+screenshots: [
+  // "assets/images/projects/caliza/screenshot1.jpg",
+  // "assets/images/projects/caliza/screenshot2.jpg"
+],
+
+// AFTER (active):
+screenshots: [
+  "assets/images/projects/caliza/screenshot1.jpg",
+  "assets/images/projects/caliza/screenshot2.jpg",
+  "assets/images/projects/caliza/screenshot3.jpg"
+],</code></pre>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <p>Save <code>config.js</code>, commit, and push. The screenshots will appear on the case study page with a lightbox gallery.</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="guide-section" id="static-demo">
+    <h2><i class='bx bx-window-alt'></i> 3. Activating live demos for static projects</h2>
+    <p>The <code>demo/</code> folder already has a placeholder page for each static project. Replace the placeholder with your actual project files.</p>
+
+    <h3>Countdown Timer & JS Calculator</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Open the project folder on your computer (e.g. your <strong>countdown-timer</strong> folder).</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Copy <strong>all files</strong> from the project into the matching demo folder:<br><code>demo/countdown-timer/</code> or <code>demo/js-calculator/</code></p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Delete the placeholder <code>index.html</code> that's already in the folder, and replace it with your project's <code>index.html</code>.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Commit and push. The live demo will be accessible at:<br><code>abbataylor.github.io/demo/countdown-timer/</code></p>
+      </div>
+    </div>
+
+    <h3>TypeScript Projects (Geo Website & Gold Dealers)</h3>
+    <div class="note">
+      <strong>⚠️ Important:</strong> TypeScript must be compiled to JavaScript before it can run in a browser. GitHub Pages cannot run <code>.ts</code> files directly.
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Open a terminal in your project folder and run: <code>tsc</code> (this compiles TypeScript → JavaScript)</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Copy <strong>all files</strong> including the compiled <code>.js</code> files into <code>demo/geo-website/</code> or <code>demo/gold-dealers/</code></p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Delete the placeholder <code>index.html</code> and replace with your project's main HTML file (renamed to <code>index.html</code>).</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Commit and push.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="guide-section" id="php-hosting">
+    <h2><i class='bx bx-server'></i> 4. Hosting your PHP/Laravel projects for free</h2>
+    <p>These platforms support PHP + MySQL for free and are suitable for showcasing your projects to employers and lecturers:</p>
+
+    <div class="host-cards">
+      <div class="host-card">
+        <h4>InfinityFree</h4>
+        <a href="https://infinityfree.com" target="_blank" rel="noopener" class="host-url">infinityfree.com</a>
+        <p>Completely free PHP + MySQL hosting. Good for plain PHP projects. Upload your files via FTP.</p>
+        <div class="pros">✓ Free forever &nbsp; ✓ PHP + MySQL &nbsp; ✓ FTP upload</div>
+      </div>
+      <div class="host-card">
+        <h4>Railway</h4>
+        <a href="https://railway.app" target="_blank" rel="noopener" class="host-url">railway.app</a>
+        <p>Best for Laravel apps. Free trial available. Connect your GitHub repo and deploy automatically.</p>
+        <div class="pros">✓ Laravel support &nbsp; ✓ GitHub deploy &nbsp; ✓ Free trial</div>
+      </div>
+      <div class="host-card">
+        <h4>000webhost</h4>
+        <a href="https://www.000webhost.com" target="_blank" rel="noopener" class="host-url">000webhost.com</a>
+        <p>Free PHP hosting by Hostinger. Suitable for plain PHP projects. Easy file manager interface.</p>
+        <div class="pros">✓ Free &nbsp; ✓ PHP + MySQL &nbsp; ✓ Easy upload</div>
+      </div>
+      <div class="host-card">
+        <h4>Render</h4>
+        <a href="https://render.com" target="_blank" rel="noopener" class="host-url">render.com</a>
+        <p>Free tier for web services. Good for Laravel projects deployed from GitHub. Professional-looking URLs.</p>
+        <div class="pros">✓ Laravel &amp; PHP &nbsp; ✓ GitHub connect &nbsp; ✓ Free tier</div>
+      </div>
+    </div>
+
+    <h3>Recommended approach for plain PHP projects (XAMPP → InfinityFree)</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Go to <code>infinityfree.com</code> and create a free account.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Create a new hosting account — you'll get a free subdomain like <code>yourproject.infinityfreeapp.com</code></p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>In the InfinityFree control panel, go to <strong>MySQL Databases</strong>, create a database and note down the <strong>host, database name, username, and password</strong>.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Use <strong>phpMyAdmin</strong> (available in the control panel) to import your SQL file and create all your tables.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <p>Update your project's database connection file (e.g. <code>config.php</code> or <code>.env</code>) with the new database credentials.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <p>Use the <strong>File Manager</strong> in the InfinityFree control panel to upload all your project files to the <code>htdocs</code> folder.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">7</div>
+        <p>Visit your subdomain URL to test the project is working.</p>
+      </div>
+    </div>
+
+    <h3>Recommended approach for Laravel projects (Railway)</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Push your Laravel project to a <strong>private GitHub repository</strong> (it won't expose the source code publicly).</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Go to <code>railway.app</code> and sign in with GitHub.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Click <strong>New Project → Deploy from GitHub repo</strong> and select your Laravel repo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Add a MySQL service to the project, then connect it to your app using the environment variables Railway provides.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <p>Set your environment variables (<code>APP_KEY</code>, <code>DB_HOST</code>, etc.) in the Railway dashboard under <strong>Variables</strong>.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <p>Railway will give you a public URL — copy it and add it to <code>config.js</code> as the <code>liveDemo</code> link.</p>
+      </div>
+    </div>
+
+    <div class="note note-blue">
+      <strong>💡 Tip:</strong> For private projects that aren't deployed yet, adding screenshots is enough. Recruiters understand that private work can't always be shown live — the case study and screenshots prove the project exists and works.
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="guide-section" id="update-config">
+    <h2><i class='bx bx-cog'></i> 5. Updating your portfolio after deployment</h2>
+    <p>Once a project is live, open <code>assets/js/config.js</code> and update its <code>liveDemo</code> field:</p>
+
+    <pre><code>// Find the project in the projects array, e.g. caliza
+{
+  id: "caliza",
+  ...
+  liveDemo: "https://caliza.infinityfreeapp.com",   // ← paste your URL here
+  ...
+}</code></pre>
+
+    <p>Save the file, then follow Section 6 to push the change to GitHub.</p>
+
+    <div class="note">
+      <strong>⚠️ Important:</strong> Keep your database credentials in <code>.env</code> files only — never commit them to GitHub. Add <code>.env</code> to your <code>.gitignore</code> file before pushing any backend project.
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="guide-section" id="push">
+    <h2><i class='bx bxl-github'></i> 6. Pushing changes to GitHub</h2>
+    <p>After adding screenshots, demo files, or updating <code>config.js</code>, run these commands in your terminal from the portfolio folder:</p>
+
+    <pre><code>cd "c:\Users\256\Desktop\abbataylor.github.io"
+
+git add .
+git commit -m "Add screenshots and live demo links"
+git push origin master</code></pre>
+
+    <p>GitHub Pages will update automatically within 1–2 minutes. Your recruiter or lecturer will see the changes immediately after that.</p>
+
+    <div class="note note-blue">
+      <strong>💡 Quick summary of what each folder is for:</strong><br><br>
+      <code>demo/countdown-timer/</code> → paste your Countdown Timer files here<br>
+      <code>demo/js-calculator/</code> → paste your JS Calculator files here<br>
+      <code>demo/geo-website/</code> → paste compiled Geo Website files here<br>
+      <code>demo/gold-dealers/</code> → paste compiled Gold Dealers files here<br>
+      <code>assets/images/projects/caliza/</code> → drop CALIZA screenshots here<br>
+      <code>assets/images/projects/careers-portal/</code> → Careers Portal screenshots<br>
+      <code>assets/images/projects/jetflix/</code> → Jetflix screenshots<br>
+      <code>assets/images/projects/school-report/</code> → School Report screenshots<br>
+      <code>assets/images/projects/cargo-shipping/</code> → Cargo Platform screenshots<br>
+      <code>assets/images/projects/it-chatbot/</code> → IT Chatbot screenshots<br>
+      <code>assets/images/projects/student-clearance/</code> → Student Clearance screenshots<br>
+      <code>assets/images/projects/student-mental-health/</code> → Mental Health screenshots
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

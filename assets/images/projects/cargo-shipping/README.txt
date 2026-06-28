@@ -1,0 +1,1 @@
+Drop your screenshots for the cargo-shipping project here.\nAccepted formats: .jpg, .jpeg, .png, .webp\nName them: screenshot1.jpg, screenshot2.jpg, etc.\nThen update the screenshots[] array in assets/js/config.js.

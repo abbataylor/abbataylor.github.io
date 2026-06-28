@@ -108,6 +108,28 @@
     const features = project.features.map(f => `<li><i class='bx bx-check-circle'></i> ${f}</li>`).join('');
     const techTags = project.technologies.map(t => `<span class="tag">${t}</span>`).join('');
 
+    const screenshots = (project.screenshots || []).filter(Boolean);
+    const galleryHtml = screenshots.length ? `
+      <div class="cs-gallery-section">
+        <div class="container">
+          <h3 class="cs-gallery-title"><i class='bx bx-images'></i> Screenshots</h3>
+          <div class="cs-gallery">
+            ${screenshots.map((src, i) => `
+              <div class="cs-gallery-item" onclick="openLightbox(${i})">
+                <img src="${src}" alt="${project.title} screenshot ${i + 1}" loading="lazy">
+                <div class="cs-gallery-overlay"><i class='bx bx-zoom-in'></i></div>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>
+      <!-- Lightbox -->
+      <div class="cs-lightbox" id="cs-lightbox" onclick="closeLightbox()">
+        <button class="cs-lb-close" onclick="closeLightbox()"><i class='bx bx-x'></i></button>
+        <button class="cs-lb-prev" onclick="event.stopPropagation();lbNav(-1)"><i class='bx bx-chevron-left'></i></button>
+        <img id="cs-lb-img" src="" alt="Screenshot">
+        <button class="cs-lb-next" onclick="event.stopPropagation();lbNav(1)"><i class='bx bx-chevron-right'></i></button>
+      </div>` : '';
+
     document.getElementById('case-study-root').innerHTML = `
       <!-- Hero -->
       <div class="cs-page-hero">
@@ -126,6 +148,8 @@
           </div>
         </div>
       </div>
+
+      ${galleryHtml}
 
       <!-- Body -->
       <div class="cs-body">
@@ -214,6 +238,33 @@
         </div>
       </a>`).join('');
   })();
+
+  // Screenshot lightbox
+  let _lbIndex = 0;
+  let _lbImages = [];
+  window.openLightbox = function(i) {
+    const lb = document.getElementById('cs-lightbox');
+    if (!lb) return;
+    _lbImages = Array.from(document.querySelectorAll('.cs-gallery-item img')).map(img => img.src);
+    _lbIndex = i;
+    document.getElementById('cs-lb-img').src = _lbImages[_lbIndex];
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeLightbox = function() {
+    const lb = document.getElementById('cs-lightbox');
+    if (lb) lb.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  window.lbNav = function(dir) {
+    _lbIndex = (_lbIndex + dir + _lbImages.length) % _lbImages.length;
+    document.getElementById('cs-lb-img').src = _lbImages[_lbIndex];
+  };
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') window.closeLightbox();
+    if (e.key === 'ArrowRight') window.lbNav(1);
+    if (e.key === 'ArrowLeft') window.lbNav(-1);
+  });
 
   function _catIcon(cat) {
     const m = { system:'bx-cog', webdev:'bx-code-alt', design:'bx-palette', data:'bx-bar-chart-alt-2', frontend:'bx-window-alt' };

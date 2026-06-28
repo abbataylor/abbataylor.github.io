@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Geo Website — AbbaSoft Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#e6eef8;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
+    .back{position:fixed;top:20px;left:20px;display:flex;align-items:center;gap:6px;color:#9aa4b2;text-decoration:none;font-size:.88rem;transition:color .2s}
+    .back:hover{color:#00bfff}
+    .icon{font-size:4rem;color:#00bfff;margin-bottom:1.5rem;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;margin-bottom:.5rem}
+    .neon{color:#00bfff}
+    p{color:#9aa4b2;max-width:520px;line-height:1.7;margin:.5rem auto 2rem}
+    .steps{background:rgba(0,191,255,.05);border:1px solid rgba(0,191,255,.1);border-radius:16px;padding:1.8rem 2rem;text-align:left;max-width:520px;width:100%;margin:0 auto 2rem}
+    .steps h3{color:#fff;margin-bottom:1rem;font-size:.95rem}
+    .step{display:flex;gap:12px;margin-bottom:.9rem;align-items:flex-start}
+    .step-num{background:rgba(0,191,255,.15);color:#00bfff;font-weight:700;font-size:.8rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .step p{margin:0;color:#c0cbda;font-size:.88rem;line-height:1.6}
+    .step code{background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-size:.82rem;color:#00bfff}
+    .note{background:rgba(250,204,21,.06);border:1px solid rgba(250,204,21,.15);border-radius:10px;padding:1rem 1.2rem;max-width:520px;width:100%;margin:0 auto 1.5rem;font-size:.85rem;color:#c0cbda;text-align:left}
+    .note strong{color:#facc15}
+    .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s}
+    .btn-outline{border:1px solid rgba(255,255,255,.08);color:#e6eef8}
+    .btn-outline:hover{background:rgba(255,255,255,.04)}
+  </style>
+</head>
+<body>
+  <a href="../index.html" class="back"><i class='bx bx-arrow-back'></i> All Demos</a>
+
+  <i class='bx bx-map-alt icon'></i>
+  <h1>Geo Website <span class="neon">Demo</span></h1>
+  <p>This is a placeholder. Replace the files in this folder with your Geo Website project files to activate the live demo.</p>
+
+  <div class="note">
+    <strong>⚠️ TypeScript note:</strong> Since this project uses TypeScript, you need to compile it first. Run <code>tsc</code> in your project folder to generate the JavaScript files, then copy everything (including the generated <code>.js</code> files) here.
+  </div>
+
+  <div class="steps">
+    <h3>📁 How to activate this demo</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <p>Open your <strong>Geo-website</strong> project folder and run <code>tsc</code> to compile TypeScript.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <p>Copy <strong>all files</strong> (including compiled <code>.js</code> files) into:<br><code>demo/geo-website/</code></p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <p>Rename your main HTML file to <code>index.html</code> if it isn't already.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <p>Delete this placeholder and push to GitHub — live at:<br><code>abbataylor.github.io/demo/geo-website/</code></p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a href="../../project-detail.html?id=geo-website" class="btn btn-outline"><i class='bx bx-book-open'></i> View Case Study</a>
+    <a href="../../projects.html" class="btn btn-outline"><i class='bx bx-arrow-back'></i> All Projects</a>
+  </div>
+</body>
+</html>

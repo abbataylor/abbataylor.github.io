@@ -1551,3 +1551,101 @@ body{font-family:'Poppins',system-ui,Arial;background:linear-gradient(180deg,var
   .page-hero h1 { font-size: 2rem; }
 }
 
+/* =========================================================
+   Screenshot Gallery + Lightbox
+   ========================================================= */
+.cs-gallery-section {
+  background: rgba(255,255,255,0.01);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 2.5rem 0;
+}
+.cs-gallery-title {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cs-gallery-title i { color: #00bfff; }
+.cs-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.cs-gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 16/9;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.cs-gallery-item:hover { transform: scale(1.02); border-color: rgba(0,191,255,0.35); }
+.cs-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cs-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.cs-gallery-overlay i { color: #fff; font-size: 1.8rem; }
+.cs-gallery-item:hover .cs-gallery-overlay { opacity: 1; }
+
+/* Lightbox */
+.cs-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.cs-lightbox.active { opacity: 1; pointer-events: all; }
+.cs-lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+}
+.cs-lb-close,
+.cs-lb-prev,
+.cs-lb-next {
+  position: fixed;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: background 0.2s;
+}
+.cs-lb-close:hover,
+.cs-lb-prev:hover,
+.cs-lb-next:hover { background: rgba(0,191,255,0.2); }
+.cs-lb-close { top: 20px; right: 20px; }
+.cs-lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.cs-lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 600px) {
+  .cs-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .cs-lb-prev { left: 8px; }
+  .cs-lb-next { right: 8px; }
+}
