@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact | AbbaSoft — Abba Moses</title>
-  <meta name="description" content="Get in touch with Abba Moses — Full-Stack Developer available for freelance work and collaborations. Based in Kampala, Uganda." />
+  <meta name="description" content="Get in touch with Abba Moses — Full-Stack Developer available for freelance work, remote jobs, and collaborations. Based in Kampala, Uganda." />
   <meta property="og:title" content="Contact Abba Moses | AbbaSoft" />
   <meta property="og:description" content="Open to freelance work and collaborations. Send a message and I'll reply shortly." />
   <meta property="og:image" content="assets/images/profile.jpg" />
@@ -13,31 +13,21 @@
   <meta name="twitter:title" content="Contact | AbbaSoft" />
   <meta name="twitter:description" content="Get in touch with Abba Moses — Full-Stack Developer." />
 
-  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- AOS (scroll animations) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Favicon (optional) -->
   <link rel="icon" href="assets/images/favicon.ico">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body class="dark">
-  <!-- Page Loader -->
+
   <div id="preloader" class="preloader">
-    <div class="loader">
-      <div class="logo-glow">AS</div>
-    </div>
+    <div class="loader"><div class="logo-glow">AS</div></div>
   </div>
 
-  <!-- Header / Navbar -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-follower" class="cursor-follower"></div>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand"><span class="brand-prefix">Welcome to </span><span class="brand-accent">AbbaSoft</span></div>
@@ -54,41 +44,112 @@
     </div>
   </header>
 
-  <!-- Custom cursor -->
-  <div id="cursor" class="cursor"></div>
-  <div id="cursor-follower" class="cursor-follower"></div>
+  <section id="contact" class="contact" style="padding-top:120px">
+    <div class="container" data-aos="fade-up">
+      <h2>Contact <span class="neon">AbbaSoft</span></h2>
+      <p class="contact-sub">Open to freelance work, remote jobs, and collaborations. Send a message and I'll reply within 24 hours.</p>
 
- 
- <!-- Contact -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-        <h2>Contact <span class="neon">AbbaSoft</span></h2>
-        <p class="contact-sub">Open to freelance work and collaborations. Send a message and I’ll reply shortly.</p>
+      <div class="contact-grid">
 
-        <div class="contact-grid">
-          <form id="contactForm" class="contact-form">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" rows="6" placeholder="Your message" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <p class="form-note"></p>
-          </form>
+        <!-- Form -->
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="field-wrap">
+            <input type="text" id="contactName" name="name" placeholder="Your name" autocomplete="name" required>
+            <span class="field-err" id="err-name"></span>
+          </div>
+          <div class="field-wrap">
+            <input type="email" id="contactEmail" name="email" placeholder="Your email address" autocomplete="email" required>
+            <span class="field-err" id="err-email"></span>
+          </div>
+          <div class="field-wrap">
+            <input type="text" id="contactSubject" name="subject" placeholder="Subject (optional)">
+          </div>
+          <div class="field-wrap">
+            <textarea id="contactMsg" name="message" rows="6" placeholder="Tell me about your project or opportunity…" required></textarea>
+            <span class="field-err" id="err-message"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="contactSubmit">
+            <i class='bx bx-send'></i> Send Message
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
 
-          <aside class="contact-aside">
-            <div class="contact-card">
-              <h4>Get in touch</h4>
-              <p>Email: <a href="mailto:mosesmbularinaabba@gmail.com">mosesmbularinaabba@gmail.com</a></p>
-              <p>Location: Kampala, Uganda</p>
+        <!-- Aside -->
+        <aside class="contact-aside">
+
+          <div class="contact-info-card" data-aos="fade-left">
+            <h4>Let's talk</h4>
+            <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.2rem">I'm currently available for freelance projects, full-time roles, and remote opportunities. Reach out through any channel below.</p>
+
+            <div class="contact-info-row">
+              <i class='bx bx-envelope'></i>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <a href="mailto:mosesmbularinaabba@gmail.com" class="contact-info-val">mosesmbularinaabba@gmail.com</a>
+              </div>
             </div>
-          </aside>
-        </div>
-      </div>
-    </section>
 
-  <!-- Scroll to top -->
+            <div class="contact-info-row">
+              <i class='bx bx-map'></i>
+              <div>
+                <div class="contact-info-label">Location</div>
+                <span class="contact-info-val">Kampala, Uganda</span>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <i class='bx bx-globe'></i>
+              <div>
+                <div class="contact-info-label">Available for</div>
+                <span class="contact-info-val">Remote &amp; On-site</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-social-grid" data-aos="fade-left" data-aos-delay="100">
+
+            <a href="#" data-social="github" target="_blank" rel="noopener" class="contact-social-card">
+              <i class='bx bxl-github'></i>
+              <div>
+                <div class="cs-label">GitHub</div>
+                <div class="cs-val">@abbataylor</div>
+              </div>
+            </a>
+
+            <a href="#" data-social="linkedin" target="_blank" rel="noopener" class="contact-social-card">
+              <i class='bx bxl-linkedin'></i>
+              <div>
+                <div class="cs-label">LinkedIn</div>
+                <div class="cs-val">Abba Moses</div>
+              </div>
+            </a>
+
+            <a href="#" data-social="whatsapp" target="_blank" rel="noopener" class="contact-social-card" id="whatsappCard" style="display:none">
+              <i class='bx bxl-whatsapp'></i>
+              <div>
+                <div class="cs-label">WhatsApp</div>
+                <div class="cs-val">Chat directly</div>
+              </div>
+            </a>
+
+            <a href="cv.html" class="contact-social-card" target="_blank" rel="noopener">
+              <i class='bx bx-file'></i>
+              <div>
+                <div class="cs-label">Curriculum Vitae</div>
+                <div class="cs-val">View &amp; Download</div>
+              </div>
+            </a>
+
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <button id="scrollTop" class="scroll-top" title="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> AbbaSoft Technologies. All rights reserved.</div>
@@ -100,13 +161,19 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <!-- CDN (recommended) -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="assets/vendor/aos.js"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/portfolio-init.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Show WhatsApp card if configured
+    if (typeof PORTFOLIO !== 'undefined' && PORTFOLIO.social.whatsapp) {
+      const wa = document.getElementById('whatsappCard');
+      if (wa) { wa.href = PORTFOLIO.social.whatsapp; wa.style.display = ''; }
+    }
+  </script>
 </body>
 </html>

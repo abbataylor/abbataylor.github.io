@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV — Abba Moses | Full-Stack Developer</title>
+  <meta name="description" content="Curriculum Vitae of Abba Moses — Full-Stack Developer & IT Solutions Specialist based in Kampala, Uganda." />
+  <meta name="robots" content="noindex" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <style>
+    /* ── Screen wrapper ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0b0b;
+      color: #e6eef8;
+      min-height: 100vh;
+    }
+
+    .cv-toolbar {
+      background: #111;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .cv-toolbar-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cv-toolbar-inner span { color: #9aa4b2; font-size: 0.88rem; }
+    .cv-toolbar-actions { display: flex; gap: 10px; }
+    .btn-print {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; border-radius: 10px; font-size: 0.9rem;
+      font-weight: 600; text-decoration: none; cursor: pointer; border: none;
+      background: linear-gradient(90deg, #00bfff, #9b59b6);
+      color: #02101a;
+    }
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; border-radius: 10px; font-size: 0.9rem;
+      font-weight: 600; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.08); color: #e6eef8;
+      background: transparent;
+    }
+
+    /* ── CV Document ── */
+    .cv-doc {
+      max-width: 860px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    /* header */
+    .cv-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid rgba(0,191,255,0.15);
+      margin-bottom: 2rem;
+    }
+    .cv-photo {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00bfff;
+      flex-shrink: 0;
+    }
+    .cv-name { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; }
+    .cv-role { color: #00bfff; font-size: 1.05rem; font-weight: 600; margin: 4px 0 10px; }
+    .cv-contacts { display: flex; flex-wrap: wrap; gap: 12px; }
+    .cv-contact-item {
+      display: flex; align-items: center; gap: 6px;
+      color: #9aa4b2; font-size: 0.85rem; text-decoration: none;
+    }
+    .cv-contact-item i { color: #00bfff; font-size: 1rem; }
+    .cv-contact-item:hover { color: #fff; }
+
+    /* sections */
+    .cv-section { margin-bottom: 2.2rem; }
+    .cv-section-title {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: #00bfff;
+      border-bottom: 1px solid rgba(0,191,255,0.15);
+      padding-bottom: 6px; margin-bottom: 1.2rem;
+    }
+
+    /* summary */
+    .cv-summary { color: #c0cbda; line-height: 1.75; font-size: 0.95rem; }
+
+    /* experience / education */
+    .cv-entry { margin-bottom: 1.5rem; }
+    .cv-entry-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
+    .cv-entry-title { font-weight: 700; color: #fff; font-size: 0.97rem; }
+    .cv-entry-date { color: #9aa4b2; font-size: 0.82rem; white-space: nowrap; }
+    .cv-entry-place { color: #00bfff; font-size: 0.85rem; margin-bottom: 6px; }
+    .cv-entry-desc { color: #9aa4b2; font-size: 0.88rem; line-height: 1.65; }
+    .cv-entry-list { list-style: none; padding: 0; margin-top: 6px; }
+    .cv-entry-list li { color: #9aa4b2; font-size: 0.88rem; padding: 3px 0 3px 1.2rem; position: relative; line-height: 1.5; }
+    .cv-entry-list li::before { content: "→"; position: absolute; left: 0; color: #00bfff; font-size: 0.8rem; }
+
+    /* skills */
+    .cv-skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .cv-skill-group h4 { color: #fff; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; }
+    .cv-skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .cv-skill-tag {
+      font-size: 0.77rem; padding: 3px 10px; border-radius: 20px;
+      background: rgba(0,191,255,0.08); color: #00bfff;
+      border: 1px solid rgba(0,191,255,0.15);
+    }
+
+    /* projects */
+    .cv-project { margin-bottom: 1rem; padding: 1rem 1.2rem; border-radius: 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
+    .cv-project-name { font-weight: 700; color: #fff; font-size: 0.95rem; }
+    .cv-project-subtitle { color: #00bfff; font-size: 0.82rem; margin-bottom: 4px; }
+    .cv-project-tech { color: #9aa4b2; font-size: 0.82rem; }
+    .cv-project-desc { color: #9aa4b2; font-size: 0.85rem; line-height: 1.6; margin-top: 4px; }
+
+    /* certs */
+    .cv-cert { display: flex; align-items: center; gap: 12px; margin-bottom: 0.8rem; }
+    .cv-cert-icon { font-size: 1.4rem; color: #00bfff; flex-shrink: 0; }
+    .cv-cert-name { color: #fff; font-size: 0.9rem; font-weight: 600; }
+    .cv-cert-meta { color: #9aa4b2; font-size: 0.82rem; }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: #fff; color: #111; }
+      .cv-toolbar { display: none; }
+      .cv-doc { max-width: 100%; margin: 0; padding: 1.5cm 2cm; }
+      .cv-header { border-bottom-color: #ccc; }
+      .cv-section-title { color: #00609d; border-bottom-color: #cce0f0; }
+      .cv-role { color: #00609d; }
+      .cv-name { color: #0d0d0d; }
+      .cv-contact-item { color: #444; }
+      .cv-contact-item i { color: #00609d; }
+      .cv-summary, .cv-entry-desc, .cv-entry-list li, .cv-project-desc, .cv-project-tech, .cv-cert-meta { color: #444; }
+      .cv-entry-title, .cv-project-name, .cv-cert-name { color: #111; }
+      .cv-entry-place, .cv-project-subtitle { color: #00609d; }
+      .cv-entry-date { color: #888; }
+      .cv-skill-tag { background: #f0f7ff; color: #00609d; border-color: #cce0f0; }
+      .cv-entry-list li::before { color: #00609d; }
+      .cv-project { background: #f9f9f9; border-color: #e0e0e0; }
+    }
+
+    @media (max-width: 600px) {
+      .cv-header { flex-direction: column; text-align: center; }
+      .cv-contacts { justify-content: center; }
+      .cv-skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar (hidden when printing) -->
+  <div class="cv-toolbar">
+    <div class="cv-toolbar-inner">
+      <span><i class='bx bx-file'></i>&nbsp; Abba Moses — Curriculum Vitae</span>
+      <div class="cv-toolbar-actions">
+        <a href="index.html" class="btn-back"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+        <button class="btn-print" onclick="window.print()"><i class='bx bx-printer'></i> Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-doc">
+
+    <!-- Header -->
+    <div class="cv-header">
+      <img src="assets/images/profile.jpg" alt="Abba Moses" class="cv-photo">
+      <div>
+        <div class="cv-name">Abba Moses</div>
+        <div class="cv-role">Full-Stack Developer &amp; IT Solutions Specialist</div>
+        <div class="cv-contacts">
+          <a href="mailto:mosesmbularinaabba@gmail.com" class="cv-contact-item"><i class='bx bx-envelope'></i> mosesmbularinaabba@gmail.com</a>
+          <a href="https://github.com/abbataylor" class="cv-contact-item" target="_blank" rel="noopener"><i class='bx bxl-github'></i> github.com/abbataylor</a>
+          <a href="https://linkedin.com/in/abba-moses-869b04229" class="cv-contact-item" target="_blank" rel="noopener"><i class='bx bxl-linkedin'></i> linkedin.com/in/abba-moses</a>
+          <a href="https://abbataylor.github.io" class="cv-contact-item" target="_blank" rel="noopener"><i class='bx bx-globe'></i> abbataylor.github.io</a>
+          <span class="cv-contact-item"><i class='bx bx-map'></i> Kampala, Uganda</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="cv-section">
+      <div class="cv-section-title">Professional Summary</div>
+      <p class="cv-summary">
+        Passionate Full-Stack Web Developer and IT Solutions Specialist with 2+ years of hands-on experience building real-world software systems.
+        Founder of AbbaSoft — delivering smart, scalable, and user-focused applications for businesses across Uganda.
+        Proficient in PHP (Laravel), JavaScript, TypeScript, MySQL, and modern UI/UX design.
+        Currently pursuing a BSc in Software Engineering at Kampala International University.
+        Seeking professional opportunities to apply my skills and contribute to impactful software projects.
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="cv-section">
+      <div class="cv-section-title">Technical Skills</div>
+      <div class="cv-skills-grid">
+        <div class="cv-skill-group">
+          <h4>Languages</h4>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">PHP</span>
+            <span class="cv-skill-tag">JavaScript</span>
+            <span class="cv-skill-tag">TypeScript</span>
+            <span class="cv-skill-tag">Python</span>
+            <span class="cv-skill-tag">HTML5</span>
+            <span class="cv-skill-tag">CSS3</span>
+            <span class="cv-skill-tag">SQL</span>
+          </div>
+        </div>
+        <div class="cv-skill-group">
+          <h4>Frameworks</h4>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">Laravel</span>
+            <span class="cv-skill-tag">React</span>
+            <span class="cv-skill-tag">Bootstrap</span>
+            <span class="cv-skill-tag">Tailwind CSS</span>
+            <span class="cv-skill-tag">Blade</span>
+          </div>
+        </div>
+        <div class="cv-skill-group">
+          <h4>Tools</h4>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">Git</span>
+            <span class="cv-skill-tag">GitHub</span>
+            <span class="cv-skill-tag">MySQL</span>
+            <span class="cv-skill-tag">XAMPP</span>
+            <span class="cv-skill-tag">VS Code</span>
+            <span class="cv-skill-tag">Composer</span>
+            <span class="cv-skill-tag">npm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="cv-section">
+      <div class="cv-section-title">Experience</div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Freelance Full-Stack Developer</div>
+          <div class="cv-entry-date">2025 – Present</div>
+        </div>
+        <div class="cv-entry-place">AbbaSoft Technologies — Kampala, Uganda</div>
+        <ul class="cv-entry-list">
+          <li>Designed and built custom web applications for local businesses — including real estate platforms, careers portals, and academic management systems.</li>
+          <li>Delivered full-stack solutions using PHP (Laravel), MySQL, JavaScript, and modern CSS frameworks.</li>
+          <li>Managed client communication, requirements gathering, and post-launch support independently.</li>
+          <li>Completed 13+ projects across system development, web development, UI/UX design, and data analysis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="cv-section">
+      <div class="cv-section-title">Education</div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">BSc Software Engineering</div>
+          <div class="cv-entry-date">2026 – Present</div>
+        </div>
+        <div class="cv-entry-place">Kampala International University (KIU), Uganda</div>
+        <div class="cv-entry-desc">Pursuing a Bachelor's degree in Software Engineering, deepening expertise in software design, algorithms, and systems development.</div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <div class="cv-entry-title">Diploma in Information Technology</div>
+          <div class="cv-entry-date">2024 – 2026</div>
+        </div>
+        <div class="cv-entry-place">Kampala International University (KIU), Uganda</div>
+        <div class="cv-entry-desc">Gained hands-on skills in networking, programming, database management, and systems development.</div>
+      </div>
+    </div>
+
+    <!-- Selected Projects -->
+    <div class="cv-section">
+      <div class="cv-section-title">Selected Projects</div>
+
+      <div class="cv-project">
+        <div class="cv-project-name">CALIZA — Real Estate Platform</div>
+        <div class="cv-project-subtitle">PHP · Laravel · MySQL · JavaScript</div>
+        <div class="cv-project-desc">Full-stack real estate platform with property management, search filters, booking workflows, and admin analytics. Multi-role authentication for buyers, agents, and administrators.</div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-name">Careers Portal — Job Management System</div>
+        <div class="cv-project-subtitle">PHP · Laravel · Blade · MySQL</div>
+        <div class="cv-project-desc">Recruitment platform with applicant tracking, job posting management, CV upload, email notifications, and HR analytics dashboard.</div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-name">Student Mental Health System</div>
+        <div class="cv-project-subtitle">PHP · Python · MySQL · JavaScript</div>
+        <div class="cv-project-desc">Cross-technology platform combining PHP web interface with Python data analysis to identify mental health trends in student populations and present insights to university administrators.</div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-name">School Report Generator</div>
+        <div class="cv-project-subtitle">PHP · MySQL · HTML · CSS</div>
+        <div class="cv-project-desc">Automated academic report generation system with configurable grading scales, print-ready output, and multi-role access for teachers and administrators.</div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-name">Cargo Shipping Platform</div>
+        <div class="cv-project-subtitle">PHP · Laravel · MySQL · AJAX</div>
+        <div class="cv-project-desc">Logistics management system with online shipment booking, real-time delivery tracking, client management, and an admin operations dashboard.</div>
+      </div>
+
+      <div style="text-align:center;margin-top:1rem">
+        <span style="color:#9aa4b2;font-size:0.85rem">View all 13 projects with full case studies at <strong style="color:#00bfff">abbataylor.github.io/projects.html</strong></span>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="cv-section">
+      <div class="cv-section-title">Certifications</div>
+      <div class="cv-cert">
+        <i class='bx bx-award cv-cert-icon'></i>
+        <div>
+          <div class="cv-cert-name">Data Science and Analytics</div>
+          <div class="cv-cert-meta">HP Life · March 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional -->
+    <div class="cv-section">
+      <div class="cv-section-title">Additional</div>
+      <ul class="cv-entry-list">
+        <li>Founder of AbbaSoft Technologies — freelance software development practice based in Kampala, Uganda.</li>
+        <li>Available for full-time employment, remote work, and international opportunities.</li>
+        <li>Strong written and spoken English communication skills.</li>
+        <li>Open source contributions and personal projects available at github.com/abbataylor.</li>
+      </ul>
+    </div>
+
+  </div><!-- /cv-doc -->
+
+</body>
+</html>

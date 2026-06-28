@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects | AbbaSoft — Abba Moses</title>
-  <meta name="description" content="Projects built by Abba Moses — Full-Stack Developer. Cargo Shipping Platform, IT Support Chatbot, Student Clearance System and more." />
+  <meta name="description" content="Real-world systems and web applications built by Abba Moses — Full-Stack Developer based in Kampala, Uganda. Featuring 13 projects across web development, systems, design, data, and frontend." />
   <meta property="og:title" content="Projects | AbbaSoft — Abba Moses" />
   <meta property="og:description" content="Real-world systems and web applications built by Abba Moses — Full-Stack Developer based in Kampala, Uganda." />
   <meta property="og:image" content="assets/images/profile.jpg" />
@@ -13,60 +13,21 @@
   <meta name="twitter:title" content="Projects | AbbaSoft" />
   <meta name="twitter:description" content="Real-world systems and web applications built by Abba Moses." />
 
-  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.ico">
-
-  <style>
-    .page-hero {
-      padding: 140px 0 60px;
-      text-align: center;
-      background: radial-gradient(ellipse at top, rgba(0,191,255,0.07) 0%, transparent 60%);
-    }
-    .page-hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.8rem; margin-bottom: 0.5rem; }
-    .page-hero p { color: var(--muted); max-width: 500px; margin: 0 auto; }
-    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 2rem; }
-    .projects-section { padding: 40px 0 80px; }
-    .project-links { display: flex; gap: 10px; margin-top: 12px; }
-    .project-links a {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 6px 14px; border-radius: 8px; font-size: 0.85rem;
-      text-decoration: none; font-weight: 600; transition: all 0.25s;
-    }
-    .link-demo { background: linear-gradient(90deg, var(--neon), var(--neon-2)); color: #02101a; }
-    .link-demo:hover { opacity: 0.85; }
-    .link-github { border: 1px solid rgba(255,255,255,0.1); color: #e6eef8; }
-    .link-github:hover { background: rgba(255,255,255,0.05); }
-    .project-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
-    .tag {
-      font-size: 0.75rem; padding: 3px 10px; border-radius: 20px;
-      background: rgba(0,191,255,0.08); color: var(--neon); border: 1px solid rgba(0,191,255,0.15);
-    }
-  </style>
 </head>
 <body class="dark">
 
-  <!-- Preloader -->
   <div id="preloader" class="preloader">
-    <div class="loader">
-      <div class="logo-glow">AS</div>
-    </div>
+    <div class="loader"><div class="logo-glow">AS</div></div>
   </div>
 
-  <!-- Custom cursor -->
   <div id="cursor" class="cursor"></div>
   <div id="cursor-follower" class="cursor-follower"></div>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand"><span class="brand-prefix">Welcome to </span><span class="brand-accent">AbbaSoft</span></div>
@@ -83,113 +44,35 @@
     </div>
   </header>
 
-  <!-- Page Hero -->
   <div class="page-hero">
     <div class="container" data-aos="fade-down">
-      <h1>Recent <span class="neon">Projects</span></h1>
-      <p>A selection of real-world systems and applications I've designed and built.</p>
+      <h1>My <span class="neon">Projects</span></h1>
+      <p>13 real-world systems and applications — from enterprise platforms to frontend components. Click any card to read the full case study.</p>
     </div>
   </div>
 
-  <!-- Projects -->
   <section class="projects-section">
     <div class="container">
 
-      <!-- Filters -->
       <div class="filters" data-aos="fade-up">
-        <button class="filter active" data-filter="all">All</button>
+        <button class="filter active" data-filter="all">All <span class="filter-count" id="count-all"></span></button>
+        <button class="filter" data-filter="system">Systems</button>
         <button class="filter" data-filter="webdev">Web Dev</button>
         <button class="filter" data-filter="design">Design</button>
-        <button class="filter" data-filter="system">Systems</button>
+        <button class="filter" data-filter="data">Data</button>
+        <button class="filter" data-filter="frontend">Frontend</button>
       </div>
 
-      <!-- Grid -->
       <div class="projects-grid" id="projectsGrid">
-
-        <!-- Cargo Shipping Platform -->
-        <div class="project" data-category="system" data-aos="fade-up">
-          <img src="assets/images/project1.jpg" alt="Cargo Shipping Platform" loading="lazy">
-          <div class="project-meta">
-            <h3 class="project-name" style="color:#fff">Cargo Shipping Platform</h3>
-            <p style="color:var(--muted);font-size:0.9rem;margin-top:6px">A full-featured cargo management system allowing clients to book shipments, track deliveries in real time, and manage logistics — all from a clean admin dashboard.</p>
-            <div class="project-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">Laravel</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">JavaScript</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="link-demo"><i class='bx bx-link-external'></i> Live Demo</a>
-              <a href="#" class="link-github"><i class='bx bxl-github'></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- IT Support Chatbot -->
-        <div class="project" data-category="webdev" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/images/project2.jpg" alt="IT Support Chatbot" loading="lazy">
-          <div class="project-meta">
-            <h3 class="project-name" style="color:#fff">IT Support Chatbot</h3>
-            <p style="color:var(--muted);font-size:0.9rem;margin-top:6px">An intelligent chatbot that handles common IT support queries, guides users through troubleshooting steps, and escalates unresolved issues to a human agent.</p>
-            <div class="project-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">AJAX</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="link-demo"><i class='bx bx-link-external'></i> Live Demo</a>
-              <a href="#" class="link-github"><i class='bx bxl-github'></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Student Clearance System -->
-        <div class="project" data-category="system" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/images/project3.jpg" alt="Student Clearance System" loading="lazy">
-          <div class="project-meta">
-            <h3 class="project-name" style="color:#fff">Student Clearance System</h3>
-            <p style="color:var(--muted);font-size:0.9rem;margin-top:6px">A web-based clearance management system for universities, enabling students to track and complete departmental clearance steps digitally — eliminating paperwork and queues.</p>
-            <div class="project-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="link-demo"><i class='bx bx-link-external'></i> Live Demo</a>
-              <a href="#" class="link-github"><i class='bx bxl-github'></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Portfolio Website -->
-        <div class="project" data-category="design" data-aos="fade-up" data-aos-delay="300">
-          <img src="assets/images/profile.jpg" alt="Portfolio Website" loading="lazy">
-          <div class="project-meta">
-            <h3 class="project-name" style="color:#fff">AbbaSoft Portfolio</h3>
-            <p style="color:var(--muted);font-size:0.9rem;margin-top:6px">Personal portfolio website featuring animated hero, dark/light theme toggle, AOS scroll animations, custom cursor, and a fully functional EmailJS contact form.</p>
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">AOS</span>
-            </div>
-            <div class="project-links">
-              <a href="index.html" class="link-demo"><i class='bx bx-link-external'></i> View Site</a>
-              <a href="#" class="link-github"><i class='bx bxl-github'></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-
+        <!-- Rendered dynamically by portfolio-init.js from config.js -->
+        <div class="projects-loading">Loading projects…</div>
       </div>
+
     </div>
   </section>
 
-  <!-- Scroll to top -->
   <button id="scrollTop" class="scroll-top" title="Back to top"><i class='bx bx-up-arrow-alt'></i></button>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> AbbaSoft Technologies. All rights reserved.</div>
@@ -201,7 +84,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/vendor/aos.js"></script>
   <script src="assets/js/config.js"></script>

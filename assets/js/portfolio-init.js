@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initSocialLinks();
   initStats();
   initSkillBars();
+  initSkillCategories();
   initTimeline();
   initCertifications();
   initProcess();
   initTestimonials();
   initCounters();
+  initProjects();
 });
 
 /* ── Available for hire badge ───────────────────────────── */
@@ -32,7 +34,7 @@ function initAvailableBadge() {
 
 /* ── Social links (footer + hero) ───────────────────────── */
 function initSocialLinks() {
-  const { github, linkedin, twitter } = PORTFOLIO.social;
+  const { github, linkedin, twitter, whatsapp } = PORTFOLIO.social;
   document.querySelectorAll('[data-social="github"]').forEach(a => {
     if (github) { a.href = github; a.style.display = ''; }
     else a.style.display = 'none';
@@ -45,9 +47,13 @@ function initSocialLinks() {
     if (twitter) { a.href = twitter; a.style.display = ''; }
     else a.style.display = 'none';
   });
+  document.querySelectorAll('[data-social="whatsapp"]').forEach(a => {
+    if (whatsapp) { a.href = whatsapp; a.style.display = ''; }
+    else a.style.display = 'none';
+  });
 }
 
-/* ── Stats (update text) ────────────────────────────────── */
+/* ── Stats ──────────────────────────────────────────────── */
 function initStats() {
   const containers = document.querySelectorAll('[data-stats-container]');
   containers.forEach(container => {
@@ -100,7 +106,6 @@ function initSkillBars() {
       </div>
     </div>`).join('');
 
-  // Animate on scroll
   const bars = el.querySelectorAll('.skill-bar-fill');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -111,6 +116,23 @@ function initSkillBars() {
     });
   }, { threshold: 0.3 });
   bars.forEach(b => observer.observe(b));
+}
+
+/* ── Skill Categories (Tech Stack) ─────────────────────── */
+function initSkillCategories() {
+  const el = document.getElementById('skill-categories-container');
+  if (!el || !PORTFOLIO.skillCategories) return;
+
+  el.innerHTML = PORTFOLIO.skillCategories.map((cat, i) => `
+    <div class="skill-cat-card" data-aos="fade-up" data-aos-delay="${i * 100}">
+      <div class="skill-cat-header">
+        <i class='bx ${cat.icon}'></i>
+        <h3>${cat.title}</h3>
+      </div>
+      <div class="skill-cat-items">
+        ${cat.items.map(item => `<span class="skill-tag">${item}</span>`).join('')}
+      </div>
+    </div>`).join('');
 }
 
 /* ── Timeline ───────────────────────────────────────────── */
@@ -175,4 +197,56 @@ function initTestimonials() {
         </div>
       </div>
     </div>`).join('');
+}
+
+/* ── Projects Grid (projects.html) ─────────────────────── */
+function initProjects() {
+  const grid = document.getElementById('projectsGrid');
+  if (!grid || !PORTFOLIO.projects) return;
+
+  grid.innerHTML = PORTFOLIO.projects.map((p, i) => {
+    const imageHtml = p.image
+      ? `<img src="${p.image}" alt="${p.title}" loading="lazy">`
+      : `<div class="proj-placeholder proj-cat-${p.category}"><i class='bx ${_categoryIcon(p.category)}'></i><span>${p.subtitle}</span></div>`;
+
+    const demoBtn = p.liveDemo
+      ? `<a href="${p.liveDemo}" class="link-demo" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> Live Demo</a>`
+      : '';
+
+    const githubBtn = (!p.isPrivate && p.github)
+      ? `<a href="${p.github}" class="link-github" target="_blank" rel="noopener"><i class='bx bxl-github'></i> GitHub</a>`
+      : (p.isPrivate ? `<span class="link-private"><i class='bx bx-lock-alt'></i> Private</span>` : '');
+
+    const caseStudyBtn = `<a href="project-detail.html?id=${p.id}" class="link-case-study"><i class='bx bx-book-open'></i> Case Study</a>`;
+
+    const privateBadge = p.isPrivate
+      ? `<span class="proj-badge badge-private"><i class='bx bx-lock-alt'></i> Private</span>`
+      : `<span class="proj-badge badge-public"><i class='bx bxl-github'></i> Public</span>`;
+
+    const statusClass = p.status === 'Live' ? 'badge-live' : (p.status === 'In Progress' ? 'badge-wip' : 'badge-done');
+    const statusBadge = `<span class="proj-badge ${statusClass}">${p.status}</span>`;
+
+    return `
+      <div class="project" data-category="${p.category}" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
+        ${imageHtml}
+        <div class="project-meta">
+          <div class="proj-badges">${privateBadge}${statusBadge}</div>
+          <h3 class="project-name">${p.title}</h3>
+          <p class="project-subtitle-text">${p.subtitle}</p>
+          <p class="project-short-desc">${p.shortDesc}</p>
+          <div class="project-tags">
+            ${p.technologies.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}
+            ${p.technologies.length > 4 ? `<span class="tag tag-more">+${p.technologies.length - 4}</span>` : ''}
+          </div>
+          <div class="project-links">
+            ${demoBtn}${githubBtn}${caseStudyBtn}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function _categoryIcon(cat) {
+  const icons = { system: 'bx-cog', webdev: 'bx-code-alt', design: 'bx-palette', data: 'bx-bar-chart-alt-2', frontend: 'bx-window-alt' };
+  return icons[cat] || 'bx-code-block';
 }
