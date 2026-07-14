@@ -336,7 +336,7 @@ const PORTFOLIO = {
       status: "Completed",
       isPrivate: true,
       github: null,
-      liveDemo: "demo/gold-dealers/",
+      liveDemo: "https://nitagolddealers.com",
       overview: "A high-end business website built for a gold dealership, designed to communicate professionalism, trust, and quality to high-value clients through careful visual design and branding.",
       problem: "The dealership had no digital presence, relying entirely on word-of-mouth. They needed a website that matched the premium nature of their business and gave potential clients confidence to make inquiries.",
       solution: "Designed a luxury-branded website with rich visual elements, a polished product showcase, and a professional inquiry form — all targeting the trust signals high-value clients look for.",

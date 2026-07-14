@@ -210,7 +210,7 @@ function initProjects() {
       : `<div class="proj-placeholder proj-cat-${p.category}"><i class='bx ${_categoryIcon(p.category)}'></i><span>${p.subtitle}</span></div>`;
 
     const demoBtn = p.liveDemo
-      ? `<a href="${p.liveDemo}" class="link-demo" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> Live Demo</a>`
+      ? `<a href="${p.liveDemo}" class="link-demo" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> View UI</a>`
       : '';
 
     const githubBtn = (!p.isPrivate && p.github)
