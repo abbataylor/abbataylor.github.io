@@ -141,7 +141,8 @@ const PORTFOLIO = {
        title         → display name
        subtitle      → one-line type description
        category      → filter key: system | webdev | design | data | frontend
-       image         → path to screenshot or null for gradient placeholder
+       image         → path to featured image shown on the project card
+       screenshots   → array of screenshot paths shown in the case study gallery
        shortDesc     → 1–2 sentence card description
        technologies  → array of tech tags (first 4 shown on card, rest collapsed)
        features      → array of bullet points for case study
